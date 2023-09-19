@@ -1,0 +1,23 @@
+.cuadro{
+    height: 500px;
+    width: 500px;
+}
+
+.negro{
+    background-color: black;
+}
+
+.amarillo{
+    background-color: yellow;
+}
+
+
+.div-registro{
+    width: 300px;
+    align-content: center;
+    background-color: rgba(183, 179, 212, 0.589);
+}
+
+.form-login {
+    border-radius: 5%;
+}

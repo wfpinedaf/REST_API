@@ -18,25 +18,6 @@ if (buscador != null) {
     }
 }
 
-
-
-
-    
-
-
-  
-
-// try {
-//     let ListaArmas 
-//     ListaArmas = new arma(req.body)
-//     await ListaArmas.save()
-//     res.send(ListaArmas)
-// } catch (error) {
-//     console.log(error)
-//     res.status(502).send("No se pudo crar el arma, revisa el error")
-// }
-
-// }
 exports.obtenerArma = async (req, res) =>{
     try {
         const DataArma = await arma.find()

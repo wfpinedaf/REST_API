@@ -12,8 +12,8 @@ router.delete('/eliminar-personaje/:id', personajesController.eliminarPesonaje)
 
 router.get('/obtenerArma', ArmasController.obtenerArma)
 router.post('/CrearArma', ArmasController.crearArma)
-router.put('/', ArmasController.actualizarArma)
-router.delete('/eliminarArma', ArmasController.eliminarArma)
+router.put('/actaulizar-arma/:id', ArmasController.actualizarArma)
+router.delete('/eliminarArma/:d', ArmasController.eliminarArma)
 
 
 // El this se podria tomar como el module de express
