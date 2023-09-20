@@ -9,7 +9,7 @@ import { BarraNavegacionComponent } from './components/barra-navegacion/barra-na
 import { RegistroComponent } from './components/registro/registro.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 //COmponenete que nos ayudan a manipular formularios
-import {FormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import {FormsModule} from '@angular/forms'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
