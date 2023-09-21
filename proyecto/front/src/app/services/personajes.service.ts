@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ClassPersonajes } from '../models/personajes';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,9 @@ export class PersonajesService {
   getPersonaje():Observable<any>{
     return this.http.get(`${this.url}/buscar-Personaje/:id`)
   }
-//   postPersonaje():Observable<any>{
-//     return this.http.post(`${this.url}/CrearPersonaje`)
-//   }
+  postPersonaje(personaje : ClassPersonajes):Observable<any>{
+    return this.http.post(`${this.url}/CrearPersonaje`, personaje)
+  }
 //   putPersonaje():Observable<any>{
 //     return this.http.put(`${this.url}/actualiza-Personaje/:id`)
 //   }

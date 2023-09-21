@@ -35,7 +35,15 @@ export class RegistroComponent {
         // }
 
         let formularioData : ClassPersonajes = this.formularioRegistro.value
+        this._personajeService.postPersonaje(formularioData).subscribe(data => {
+            alert("Personaje Creado!")
+        }, error => {
+            console.log(error)
+
+        })
     }
+
+
 
     CambiarColor(){
         this.miCuadro.nativeElement.classList.add('amarillo')
