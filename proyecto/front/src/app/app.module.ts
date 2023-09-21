@@ -10,6 +10,7 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 //COmponenete que nos ayudan a manipular formularios
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {HttpClientModule} from "@angular/common/http"
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

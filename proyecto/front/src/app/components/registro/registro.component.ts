@@ -1,5 +1,8 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import{FormBuilder, FormGroup, Validators} from "@angular/forms"
+import{ClassPersonajes} from "src/app/models/personajes"
+import {PersonajesService} from "src/app/services/personajes.service"
+
 // FormBuilder se determina como el encargado de manejar
 @Component({
   selector: 'app-registro',
@@ -14,7 +17,7 @@ export class RegistroComponent {
     regexsoloNumeros = /^[0-9 ]+$/
 
 
-    constructor(private fb:FormBuilder){
+    constructor(private fb:FormBuilder,private _personajeService:PersonajesService){
         this.formularioRegistro = this.fb.group({
             nombre: ['', [Validators.required, Validators.pattern(this.regexAlfabetico)]],
             edad: ['', [Validators.required, Validators.pattern(this.regexsoloNumeros)]],
@@ -23,7 +26,15 @@ export class RegistroComponent {
     }
 
     enviarFormulario(){
-        console.log("xd")
+        // let manera1 = this.formularioResgistro.value
+
+        // const personajeFormulario:ClassPersonajes = {
+        // nombre: this.formularioRegistro.get('nombre')!.value,
+        // edad: this.formularioRegistro.get('edad')!.value,
+        // urlImagen: this.formularioRegistro.get('urlImagen')!.value
+        // }
+
+        let formularioData : ClassPersonajes = this.formularioRegistro.value
     }
 
     CambiarColor(){
