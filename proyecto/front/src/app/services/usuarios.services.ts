@@ -17,8 +17,8 @@ export class UsersService {
   getPUser():Observable<any>{
     return this.http.get(`${this.url}/get-user/:id`)
   }
-  postUser(personaje : ClassUsers):Observable<any>{
-    return this.http.post(`${this.url}/create-user`, personaje)
+  postUser(DataUsuario : ClassUsers):Observable<any>{
+    return this.http.post(`${this.url}/create-user`, DataUsuario)
   }
 
 

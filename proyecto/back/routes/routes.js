@@ -1,14 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const personajesController = require('../controllers/personajes.controller')
 const ArmasController = require('../controllers/armas.controller')
 const UsersController = require('../controllers/usuarios.controller')
-
-router.get('/obtener-Personaje', personajesController.obtenerTodosLosPesonajes)
-router.get('/buscar-Personaje/:id', personajesController.obtenerUnSoloPesonajes)
-router.post('/CrearPersonaje', personajesController.crearPersonaje)
-router.put('/actualiza-Personaje/:id', personajesController.actualizarPesonajes)
-router.delete('/eliminar-personaje/:id', personajesController.eliminarPesonaje)
 
 
 router.get('/obtenerArma', ArmasController.obtenerArma)
