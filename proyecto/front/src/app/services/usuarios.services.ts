@@ -1,26 +1,27 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ClassPersonajes} from '../models/personajes';
+import { ClassUsers} from '../models/Usuarios';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PersonajesService {
+export class UsersService {
     url = "http://localhost:3000/api/v1"
 
   constructor(private http: HttpClient) {}
-  getPersonajes():Observable<any>{
-    return this.http.get(`${this.url}/obtener-Personaje`)
+
+  getUsers():Observable<any>{
+    return this.http.get(`${this.url}/get-user`)
   }
-  getPersonaje():Observable<any>{
-    return this.http.get(`${this.url}/buscar-Personaje/:id`)
+  getPUser():Observable<any>{
+    return this.http.get(`${this.url}/get-user/:id`)
   }
-  postPersonaje(personaje : ClassPersonajes):Observable<any>{
-    return this.http.post(`${this.url}/CrearPersonaje`, personaje)
+  postUser(personaje : ClassUsers):Observable<any>{
+    return this.http.post(`${this.url}/create-user`, personaje)
   }
 
-}
+
     // Debemos usar el metodo async pero no se va a colocar como tal async
 
 
@@ -30,4 +31,4 @@ export class PersonajesService {
 //   deletePersonaje():Observable<any>{
 //     return this.http.delete(`${this.url}/eliminar-personaje/:id`)
 //   }
-
+}

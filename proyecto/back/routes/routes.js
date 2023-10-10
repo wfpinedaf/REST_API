@@ -16,8 +16,6 @@ router.post('/CrearArma', ArmasController.crearArma)
 router.put('/actaulizar-arma/:id', ArmasController.actualizarArma)
 router.delete('/eliminarArma/:d', ArmasController.eliminarArma)
 
-
-
 // Router para Angular Usuarios
 
 router.get('/get-user', UsersController.GetAllUsers)

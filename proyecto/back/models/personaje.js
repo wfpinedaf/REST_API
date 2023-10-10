@@ -5,7 +5,7 @@ const PersonajeSchema = mongoose.Schema({
         type:String,
         require: true
     },
-    edad:{
+    descripcion:{
         type:Number,
         require:true
     },

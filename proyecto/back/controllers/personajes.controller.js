@@ -1,6 +1,6 @@
 const { json } = require('express')
-const personaje = require('../models/personaje')
-const Personaje = require('../models/personaje')
+const Videojuegos = require('../models/personaje')
+
 
 exports.crearPersonaje = async (req, res) => {
     // console.log(req.body)
@@ -11,7 +11,7 @@ exports.crearPersonaje = async (req, res) => {
         res.send(ListaPersonajes)
     } catch (error) {
         console.log(error)
-        res.status(502).send("averiado prrito")
+        res.status(502).send("Not found, please check it with the System Admin")
     }
 
 }
