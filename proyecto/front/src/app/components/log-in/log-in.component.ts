@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import{FormBuilder, FormGroup, Validators} from "@angular/forms"
-import { UsersService } from 'src/app/services/usuarios.services';
+import { UsersService } from 'src/app/services/usuarios.service';
 
 @Component({
   selector: 'app-log-in',

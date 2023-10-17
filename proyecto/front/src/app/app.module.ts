@@ -10,7 +10,8 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { LogInComponent } from './components/log-in/log-in.component';
 //COmponenete que nos ayudan a manipular formularios
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-import {HttpClientModule} from "@angular/common/http"
+import {HttpClientModule} from "@angular/common/http";
+import { ListaUsuariosComponent } from './components/admin/lista-usuarios/lista-usuarios.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {HttpClientModule} from "@angular/common/http"
     PiePaginaComponent,
     BarraNavegacionComponent,
     RegistroComponent,
-    LogInComponent
+    LogInComponent,
+    ListaUsuariosComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,9 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import{FormBuilder, FormGroup, Validators} from "@angular/forms"
-import {UsersService} from "src/app/services/usuarios.services"
+import {UsersService} from "src/app/services/usuarios.service"
 import { ClassUsers} from '../../models/Usuarios';
+import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -17,7 +19,7 @@ export class RegistroComponent {
     regexsoloNumeros = /^[0-9 ]+$/
     regexCorreo = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
 
-    constructor(private fb:FormBuilder, private _usersService:UsersService){
+    constructor(private fb:FormBuilder, private _usersService:UsersService, private router: Router){
         this.FormRegistro = this.fb.group({
             First_Name: ['', [Validators.required, Validators.pattern(this.regexAlfabetico)]],
             Last_Name: ['', [Validators.required, Validators.pattern(this.regexAlfabetico)]],
@@ -29,7 +31,9 @@ export class RegistroComponent {
         let formularioData : ClassUsers = this.FormRegistro.value
         console.log(formularioData)
         this._usersService.postUser(formularioData).subscribe(data => {
-            alert("Personaje Creado!")
+            alert("Usuario Creado!")
+            // Swal.fire('SweetAlert2 is working!')
+            this.router.navigate(['/Login-app'])
         }, error => {
             console.log(error)
         })

@@ -21,14 +21,9 @@ export class UsersService {
     return this.http.post(`${this.url}/create-user`, DataUsuario)
   }
 
+  getUsersList():Observable<any>{
+        return this.http.get(`${this.url}/get-user`)
+  }
 
-    // Debemos usar el metodo async pero no se va a colocar como tal async
 
-
-//   putPersonaje():Observable<any>{
-//     return this.http.put(`${this.url}/actualiza-Personaje/:id`)
-//   }
-//   deletePersonaje():Observable<any>{
-//     return this.http.delete(`${this.url}/eliminar-personaje/:id`)
-//   }
 }
