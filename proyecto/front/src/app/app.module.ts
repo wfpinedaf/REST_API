@@ -11,7 +11,8 @@ import { LogInComponent } from './components/log-in/log-in.component';
 //COmponenete que nos ayudan a manipular formularios
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import {HttpClientModule} from "@angular/common/http";
-import { ListaUsuariosComponent } from './components/admin/lista-usuarios/lista-usuarios.component'
+import { ListaUsuariosComponent } from './components/admin/lista-usuarios/lista-usuarios.component';
+import { Error404Component } from './components/error404/error404.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ListaUsuariosComponent } from './components/admin/lista-usuarios/lista-
     BarraNavegacionComponent,
     RegistroComponent,
     LogInComponent,
-    ListaUsuariosComponent
+    ListaUsuariosComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,

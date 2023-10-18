@@ -14,16 +14,24 @@ export class UsersService {
   getUsers():Observable<any>{
     return this.http.get(`${this.url}/get-user`)
   }
-  getPUser():Observable<any>{
-    return this.http.get(`${this.url}/get-user/:id`)
-  }
+
   postUser(DataUsuario : ClassUsers):Observable<any>{
     return this.http.post(`${this.url}/create-user`, DataUsuario)
   }
 
   getUsersList():Observable<any>{
-        return this.http.get(`${this.url}/get-user`)
+        return this.http.get(`${this.url}/get-users`)
   }
 
+  deleteUser(idUser:string):Observable<any>{
+    return this.http.delete(`${this.url}/delete-single-user/${idUser}`)
+  }
 
+  getUser(idUser:string):Observable<any>{
+    return this.http.get(`${this.url}/get-user/${idUser}`)
+  }
+
+  putUser(idUser: string, dataUser: ClassUsers):Observable<any>{
+        return this.http.put(`${this.url}//update-single-user/${idUser}`, dataUser)
+  }
 }

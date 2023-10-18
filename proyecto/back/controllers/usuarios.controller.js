@@ -1,7 +1,7 @@
 const { json } = require('express')
 const user = require('../models/usuario')
 
-exports.CreateUser = async (req, res) =>{
+exports.CreateUser = async (req, res) => {
     try {
         let UsersList
         UsersList = new user(req.body)
@@ -13,9 +13,9 @@ exports.CreateUser = async (req, res) =>{
     }
 }
 
-exports.GetAllUsers = async (req, res) =>{
+exports.GetAllUsers = async (req, res) => {
     try {
-        let UsersData = await user.find() 
+        let UsersData = await user.find()
         res.json(UsersData)
     } catch (error) {
         console.log(error)
@@ -23,45 +23,45 @@ exports.GetAllUsers = async (req, res) =>{
     }
 }
 
-exports.GetSingleUser =async(req, res) => {
+exports.GetSingleUser = async (req, res) => {
     try {
         let regexIdMongo = /^[0-9a-fA-F]{24}$/
         if (regexIdMongo.test(req.params.id)) {
             const UserData = await user.findById(req.params.id)
             if (!UserData) {
                 res.status(404).send("User not found")
-                
-            }else{
+
+            } else {
                 res.json(UserData)
             }
-            
+
         }
-        else{
+        else {
             res.status(418).send("User not found.")
         }
     } catch (let) {
-        
+
     }
 }
 
 
-exports.UpdateSingleUser = async(req, res) => {
+exports.UpdateSingleUser = async (req, res) => {
     try {
         let regexIdMongo = /^[0-9a-fA-F]{24}$/
         if (regexIdMongo.test(req.params.id)) {
-            const UserData =  await user.findById(req.params.id)
+            const UserData = await user.findById(req.params.id)
             if (!UserData) {
                 res.status(404).send('User not found')
             } else {
-                const {First_Name, Last_Name, Email, Password} = req.body
-                UserData.First_Name =First_Name
+                const { First_Name, Last_Name, Email, Password } = req.body
+                UserData.First_Name = First_Name
                 UserData.Last_Name = Last_Name
                 UserData.Email = Email
                 UserData.Password = Password
-                let updatedDoc = await user.findOneAndUpdate({_id: req.params.id}, UserData)
+                let updatedDoc = await user.findOneAndUpdate({ _id: req.params.id }, UserData)
                 res.json(updatedDoc)
             }
-            
+
         } else {
             res.status(418).send("Invalid Id")
         }
@@ -72,20 +72,21 @@ exports.UpdateSingleUser = async(req, res) => {
 }
 
 
-exports.DeleteSingleUser = async(req, res) => {
+exports.DeleteSingleUser = async (req, res) => {
     try {
         let regexIdMongo = /^[0-9a-fA-F]{24}$/
-        if (regexIdMongo.test(req.params.id))  {
+        if (regexIdMongo.test(req.params.id)) {
             const UserData = await user.findById(req.params.id)
             if (!UserData) {
                 res.status(404).send('Id not found')
                 return
-            } 
-            await user.findOneAndRemove({_id: req.params.id})
-            res.send("User deleted!")}
-            else{
-                res.status(418).send("Invalid Id")
             }
+            await user.findOneAndRemove({ _id: req.params.id })
+            res.send("User deleted!")
+        }
+        else {
+            res.status(418).send("Invalid Id")
+        }
     } catch (error) {
         console.log(error)
         res.status(502).send("Reach the system Admin")

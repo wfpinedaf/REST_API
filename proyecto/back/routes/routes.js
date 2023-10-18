@@ -11,7 +11,7 @@ router.delete('/eliminarArma/:d', ArmasController.eliminarArma)
 
 // Router para Angular Usuarios
 
-router.get('/get-user', UsersController.GetAllUsers)
+router.get('/get-users', UsersController.GetAllUsers)
 router.get('/get-user/:id', UsersController.GetSingleUser)
 router.post('/create-user', UsersController.CreateUser)
 router.put('/update-single-user/:id', UsersController.UpdateSingleUser)

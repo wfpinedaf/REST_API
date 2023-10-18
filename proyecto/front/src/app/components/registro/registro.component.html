@@ -1,40 +1,49 @@
-<div class="d-flex align-content-center justify-content-center" style="background-image: url(assets/img/background.jpg)">
+<div class="d-flex align-content-center justify-content-center"
+    style="background-image: url(assets/img/background.jpg)">
 
     <form [formGroup]="FormRegistro" (ngSubmit)="enviarRegistro()">
         <div class="border m-5 div-registro">
-            <h3 class="text-center">Sign Up</h3>
+            <h3 class="text-center">{{tituloPagina}}</h3>
             <div class="px-4 py-3">
-              <div class="mb-3">
-                <div>
-                    <label for="exampleDropdownFormEmail1" class="form-label">First Name</label>
-                    <input type="text" class="form-control" formControlName="First_Name" placeholder="First Name">
+                <div class="mb-3">
+                    <div>
+                        <label for="exampleDropdownFormEmail1" class="form-label">First Name</label>
+                        <input type="text" class="form-control" formControlName="First_Name" placeholder="First Name">
+                    </div>
+                    <div class="text-danger"
+                        *ngIf="FormRegistro.get('First_Name')!.hasError('required') && FormRegistro.get('First_Name')!.touched">
+                        First Name Required</div>
                 </div>
-                <div class="text-danger" *ngIf="FormRegistro.get('First_Name')!.hasError('required') && FormRegistro.get('First_Name')!.touched">First Name Required</div>
-              </div>
-              <div class="mb-3">
-                <div>
-                    <label for="exampleDropdownFormEmail1" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" formControlName="Last_Name" placeholder="Last Name">
+                <div class="mb-3">
+                    <div>
+                        <label for="exampleDropdownFormEmail1" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" formControlName="Last_Name" placeholder="Last Name">
+                    </div>
+                    <div class="text-danger"
+                        *ngIf="FormRegistro.get('Last_Name')!.hasError('required') && FormRegistro.get('Last_Name')!.touched">
+                        Last Name Required</div>
                 </div>
-                <div class="text-danger" *ngIf="FormRegistro.get('Last_Name')!.hasError('required') && FormRegistro.get('Last_Name')!.touched"> Last Name Required</div>
-              </div>
-              <div class="mb-3">
-                <div>
-                    <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
-                    <input type="text" class="form-control" formControlName="Email" placeholder="email@example.com">
+                <div class="mb-3">
+                    <div>
+                        <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
+                        <input type="text" class="form-control" formControlName="Email" placeholder="email@example.com">
+                    </div>
+                    <div class="text-danger"
+                        *ngIf="FormRegistro.get('Email')!.hasError('required') && FormRegistro.get('Email')!.touched">
+                        Email Required</div>
                 </div>
-                <div class="text-danger" *ngIf="FormRegistro.get('Email')!.hasError('required') && FormRegistro.get('Email')!.touched"> Email Required</div>
-              </div>
-              <div class="mb-3">
-                  <div>
-                      <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
-                      <input type="text" class="form-control" formControlName="Password" placeholder="Password">
-                  </div>
-                  <div class="text-danger" *ngIf="FormRegistro.get('Password')!.hasError('required') && FormRegistro.get('Password')!.touched">Password Required</div>
-              </div>
-              <div class="mb-3">
-              </div>
-              <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                <div class="mb-3">
+                    <div>
+                        <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
+                        <input type="text" class="form-control" formControlName="Password" placeholder="Password">
+                    </div>
+                    <div class="text-danger"
+                        *ngIf="FormRegistro.get('Password')!.hasError('required') && FormRegistro.get('Password')!.touched">
+                        Password Required</div>
+                </div>
+                <div class="mb-3">
+                </div>
+                <button type="submit" class="btn btn-primary w-100">{{txtbtn}}</button>
             </div>
 
         </div>
@@ -42,5 +51,3 @@
     </form>
 
 </div>
-
-
