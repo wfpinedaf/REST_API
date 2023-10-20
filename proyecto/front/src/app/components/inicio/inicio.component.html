@@ -1,62 +1,18 @@
 <div class="div-Inicio">
-    <h1 class="text-center">Best Games Ever</h1>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
-        <div class="col">
-          <div class="card h-100">
-            <img src="assets/img/assasins.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <div class="div-Inicio">
+        <h1 class="text-center">Videogames Catalog</h1>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 p-5">
+            <div class="col" *ngFor="let videojuego of videojuegos">
+                <div class="card h-100">
+                    <img [src]="videojuego.urlImagen" class=" tamañoimg" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ videojuego.NombreJuego }}</h5>
+                        <p class="card-text">{{ videojuego.Descripcion }}</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="assets/img/crew.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a short card.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="assets/img/cod.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="assets/img/sekiro.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-            <div class="card h-100">
-              <img src="assets/img/theLord.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img src="assets/img/final.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-      </div>
+    </div>
 </div>
-
-

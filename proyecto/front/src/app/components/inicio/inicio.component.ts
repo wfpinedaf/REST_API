@@ -1,24 +1,31 @@
 import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
-import {PersonajesService } from "src/app/services/personajes.service"
+import { PersonajesService } from "src/app/services/personajes.service"
+import { VideojuegoService } from "src/app/services/videojuegos.service"
 
 @Component({
-  selector: 'app-inicio',
-  templateUrl: './inicio.component.html',
-  styleUrls: ['./inicio.component.css']
+    selector: 'app-inicio',
+    templateUrl: './inicio.component.html',
+    styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent {
-    constructor(private _personajeService:PersonajesService ){
+    videojuegos: any[] = [];
+    constructor(private miServicio: VideojuegoService) { }
 
-    }
-    ngOnInit():void{
-        this.ObtenerPersonaje()
+    ngOnInit(): void {
+        this.ObtenerVideojuegos();
     }
 
-    ObtenerPersonaje(){
-        this._personajeService.getPersonajes().subscribe(data =>{
-            console.log(data)
-        }, error =>{
-            console.log(error)
-        })
+    ObtenerVideojuegos() {
+        this.miServicio.getvideojuegos().subscribe(data => {
+            this.videojuegos = data;
+        }, error => {
+            console.error(error);
+        });
     }
 }
+
+
+
+
+
+
